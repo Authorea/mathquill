@@ -8,6 +8,15 @@ for (var key in MQ1) (function(key, val) {
     MathQuill[key].prototype = val.prototype;
   }
   else MathQuill[key] = val;
+
 }(key, MQ1[key]));
+
+if ( typeof exports === 'object' ) {
+  // add the css data to the head tag
+  require('./mathquill.css');
+
+  // export the module
+  module.exports = MathQuill;
+}
 
 }());
